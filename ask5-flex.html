@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project5 - Flex</title>
+
+    <style>
+        body {
+            margin: 0px;
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            flex-wrap: nowrap;
+
+        }
+
+        .container .left {
+            flex-grow: 0.4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            border-right:1px solid #cccccc;
+            box-sizing: border-box;
+
+           
+
+        }
+
+
+
+
+        .container .left .top {
+            flex: 0.55;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+
+        .container .left .top .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex: 0 1;
+            margin-top: 1rem;
+            font-size: 2.5rem;
+            border-bottom:1px solid #cccccc;
+            box-sizing: border-box;
+
+
+        }
+
+        .container .left .top p {
+            text-align: justify;
+            font-size: 1.3rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+
+            flex: 1;
+        }
+
+        .container .left .top p a {
+            text-decoration: none;
+            color: #cccccc;
+            font-size: 1em;
+        }
+
+        .container .left .top p a:hover{
+            color:#a5a5a5;
+        }
+
+        .container .left .top p a:active{
+            color:#808080;
+        }
+
+        .container .left .top .price {
+            text-align: center;
+            display: flex;
+            font-size: 2rem;
+            flex: 1;
+        }
+
+        .container .left .bottom {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            flex: 0.45;
+            border-top:1px solid #cccccc;
+            box-sizing: border-box;
+
+        }
+
+        .container .left .bottom .up {
+            flex: 1;
+            display: flex;
+            border-bottom:1px solid #cccccc;
+            box-sizing: border-box;
+            
+        }
+
+
+        .container .left .bottom .up .color {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-right:1px solid #cccccc;
+            box-sizing: border-box;
+
+            
+        }
+
+        .container .left .bottom .up .color .colorup {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .container .left .bottom .up .color .colorup span {
+            flex: 1;
+            font-size: 1.5rem;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+
+
+
+
+
+
+        .container .left .bottom .up .color .colordown {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* border-top:1px solid #cccccc;
+            box-sizing: border-box;*/
+             position:relative;
+
+        }
+
+        .container .left .bottom .up .color .colordown .colorarea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+
+
+        }
+
+
+        .container .left .bottom .up .color .colordown .colorarea .red {
+            background-color: rgb(255, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2rem;
+            flex: 0 1 2rem;
+            border-radius: 100px;
+            text-decoration: none;
+            color: white;
+            border:2px solid rgb(255, 0, 0);
+  
+        }
+
+        .container .left .bottom .up .color .colordown .colorarea .green {
+            background-color: rgb(0, 255, 0);
+            height: 2rem;
+            flex: 0 1 2rem;
+            border-radius: 100px;
+            margin:1rem;
+            border:2px solid rgb(0, 255, 0);
+      
+        }
+
+        .container .left .bottom .up .color .colordown .colorarea .blue {
+            background-color: rgb(00, 00, 255);
+            flex: 0 1 2rem;
+            height: 2rem;
+            border-radius: 100px;
+            border:2px solid rgb(00, 00, 255);
+        }
+
+
+          
+       
+        
+
+        .container .left .bottom .up .color .colordown .colorarea a:hover{
+            border:2px solid #cccccc;
+            /* box-sizing: border-box; */
+           
+        }
+
+        .container .left .bottom .up .color .colordown .colorarea a:active{
+            border:2px solid #929292;
+            /* box-sizing: border-box; */
+           
+        }
+
+
+
+
+
+
+
+
+
+        .container .left .bottom .up .size {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container .left .bottom .up .sizeup {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .left .bottom .up .sizeup span {
+            flex: 1;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+
+
+
+
+        .container .left .bottom .up .sizedown {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border-top:1px solid #cccccc;
+            box-sizing: border-box; */
+
+        }
+
+        .container .left .bottom .up .sizedown span {
+            color: #cccccc;
+            font-size: 1.5rem;
+            text-align: center;
+            flex: 1;
+        }
+
+
+
+
+
+        .container .left .bottom .down {
+            flex: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .left .bottom .down .buttons {
+            flex: 1 1 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+
+        }
+
+        .container .left .bottom .down .buttons :first-child {
+            display: block;
+            background-color: darkviolet;
+            text-decoration: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+            flex: 0 1 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            border:2px solid transparent;
+        }
+
+        .container .left .bottom .down .buttons :first-child:active {
+            background-color: rgb(152, 99, 218);
+            color:#cccccc;
+        }
+
+        .container .left .bottom .down .buttons :last-child {
+            display: block;
+            background-color: rgb(90, 71, 114);
+            text-decoration: none;
+            padding: 0.8rem;
+            font-size: 1rem;
+            text-align: center;
+            flex: 0 1 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            border:2px solid transparent;
+        }
+
+        .container .left .bottom .down .buttons :last-child:active {
+            background-color: rgb(131, 100, 168);
+            color:#cccccc;
+        }
+
+        .container .left .bottom .down .buttons a:hover{
+            border:2px solid #979797;
+            
+        }
+
+        .container .left .bottom .down .buttons a:active{
+            border:2px solid #686868;
+            
+        }
+
+        .container .right {
+
+            height: 100vh;
+            flex: 2;
+            position:relative;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container .right .top {
+            flex: 2;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            flex-wrap: nowrap;
+      
+
+
+        }
+
+        .container .right .top .mainfoto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            margin: 1.5rem;
+        }
+
+        .container .right .top .mainfoto img {
+            width: auto;
+            height: 100%;
+            max-width: 200rem;
+        }
+
+        .container .right .bottom {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: 1rem;
+            border-top:1px solid #cccccc;
+           
+            box-sizing: border-box;
+
+
+        }
+
+        .container .right .bottom .fotos {
+            display: flex;
+            flex: 0 1 10rem;
+    
+            justify-content: space-between;
+            align-items:center;
+            flex-wrap: nowrap;
+            
+
+        }
+
+        .container .right .bottom .fotos a {
+            width: 7.1rem;
+            height: 8rem;
+            flex: 1 1 1rem;
+            justify-content: center;
+            align-items: center;
+            margin:0.5rem;
+            display: flex;
+            border: 1px solid rgb(173, 173, 173);
+            /* padding:1px solid transparent; */
+            border-radius: 1rem;
+           
+        }
+        /* .container .right .bottom .fotos :nth-child(2):nth-child(3) {
+            width: 6rem;
+            background-color: violet;
+        } */
+
+        .container .right .bottom .fotos a img {
+            width:auto;
+            height: 8rem;
+            background-color: rgb(53, 155, 95);
+         
+        }
+
+
+        .container .right .bottom .fotos a:hover {
+            border: 1px solid black;
+            border-radius: 1rem;
+            background-color: #dddddd;
+        }
+
+        
+        .container .right .bottom .fotos a:active {
+            border: 1px solid black;
+            border-radius: 1rem;
+            background-color: #cccccc;
+        }
+
+
+        .zoom{
+            position: absolute;
+            top:0.5rem;
+            left:0.5rem;
+        }
+
+        .zoom:hover{
+            background-color: #ebebeb;
+        }
+
+        .zoom:active{
+            background-color: #cccccc;
+        }
+
+        .cancel{
+            position: absolute;
+           font-size: 2.5rem;
+            top:0;
+            margin:0;
+            right:1rem;
+            text-decoration: none;
+            color:black;
+        }
+
+        .cancel:hover{
+            color:#cccccc;
+        }
+
+        .cancel:active{
+            color:#757575;
+        }
+
+
+
+
+
+        @media only screen and (max-width: 780px) {
+
+            .container .left {
+                order: 2;
+                flex:0 100%;
+                height: auto;
+              
+                
+                
+            }
+
+            .container .right {
+                order: 1;
+                flex:0 100%;
+                height: auto;
+               
+            }
+
+            .container {
+                flex-wrap: wrap;
+            }
+
+
+            .container .left .bottom .down .buttons a{
+                margin-bottom:.5rem; 
+                margin-top: 1rem;
+                padding-top: 2rem;
+            }
+
+            .container .left .bottom .up .color .colordown .colorarea{
+                position: relative;
+            }
+
+            .container .left .bottom .up .color .colorup{
+                padding:1.15rem 0;
+            }
+
+
+        
+
+            .container .left .bottom .up .color .colordown .colorarea .red{
+                height: 2rem;
+                flex: 0 1 2rem;
+            }
+            .container .left .bottom .up .color .colordown .colorarea .green{
+                height: 2rem;
+                flex: 0 1 2rem;
+            }
+            .container .left .bottom .up .color .colordown .colorarea .blue{
+                height: 2rem;
+                flex: 0 1 2rem;
+                /* position: absolute;
+                top:1rem;
+                left:2rem; */
+            }
+
+            .container .right .bottom .fotos a img{
+                width: auto;
+                height: 5rem;
+              
+            }
+
+            .container .right .bottom .fotos a{
+                width: 5rem;
+                height: 5rem;
+                padding:0rem;  
+            }
+
+
+            .container .left{
+                border:none;
+            }
+
+           
+
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="left">
+
+            <div class="top">
+                <span class="title">Filson</span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum aliquid minus earum velit ducimus cum
+                    nisi veritatis quis. Molestiae numquam totam rem illo tempora molestias ipsam reiciendis dolores
+                    sapiente minima?<a href="#"> show more...</a></p>
+
+                <span class="price">820€</span>
+
+
+            </div>
+
+            <div class="bottom">
+
+                <div class="up">
+
+                    <div class="color">
+
+                        <div class="colorup">
+                            <span>COLOR</span>
+                        </div>
+
+                        <div class="colordown">
+                            <div class="colorarea">
+                                <a class="red" href="#">✓</a>
+                                <a class="green" href="#"></a>
+                                <a class="blue" href="#"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="size">
+                        <div class="sizeup">
+                            <span>SIZE</span>
+                        </div>
+
+                        <div class="sizedown">
+                            <span>ONE SIZE</span>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="down">
+
+                    <div class="buttons">
+
+                        <a href="#">ADD TO BAG</a>
+                        <a href="#">VIEW FULL DETAILS</a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="right">
+            <div class="top">
+                <a href="#"><img class="zoom" src="magnify.png"></a>
+                <a href="#">  <span class="cancel">x</span></a>
+                
+
+
+                <div class="mainfoto">
+                    <img src="item.jpeg" />
+
+                </div>
+
+            </div>
+
+            <div class="bottom">
+                <div class="fotos">
+                    <a href="#"><img src="item.jpeg" /></a>
+
+                    <a href="#"> <img src="item1.jpeg" /></a>
+
+                    <a href="#"><img src="item2.jpeg" /></a>
+
+                    <a href="#"> <img src="item3.jpeg" /></a>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
