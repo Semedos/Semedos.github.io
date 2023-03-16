@@ -3,7 +3,8 @@
 
 <head>
 
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project5 - Flex</title>
 
@@ -268,6 +269,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            position:relative;
         }
 
         .container .left .bottom .down .buttons {
@@ -316,6 +318,15 @@
             border:2px solid transparent;
         }
 
+        #check{
+            position:absolute;
+            top:.5rem;
+            right:12rem;
+            display:block;
+            font-size:2rem;
+            display: block;
+        }
+
         .container .left .bottom .down .buttons :last-child:active {
             background-color: rgb(131, 100, 168);
             color:#cccccc;
@@ -352,7 +363,7 @@
 
         }
 
-        .container .right .top .mainfoto {
+        .container .right .top #mainfoto {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -360,10 +371,15 @@
             margin: 1.5rem;
         }
 
-        .container .right .top .mainfoto img {
+        /* .container .right .top #mainfoto img {
             width: auto;
             height: 100%;
             max-width: 200rem;
+        } */
+
+        #big{
+            width: auto;
+            max-height: 25rem;
         }
 
         .container .right .bottom {
@@ -473,9 +489,7 @@
                 order: 2;
                 flex:0 100%;
                 height: auto;
-              
-                
-                
+
             }
 
             .container .right {
@@ -539,6 +553,11 @@
             .container .left{
                 border:none;
             }
+
+            #big{
+            width: auto;
+            max-height: 22rem;
+        }
 
            
 
@@ -606,11 +625,10 @@
 
                     <div class="buttons">
 
-                        <a href="#">ADD TO BAG</a>
+                        <a id="b1"  href="#">ADD TO BAG</a>
                         <a href="#">VIEW FULL DETAILS</a>
-
-
                     </div>
+                    <p id="check"></p>
 
 
                 </div>
@@ -625,11 +643,13 @@
             <div class="top">
                 <a href="#"><img class="zoom" src="magnify.png"></a>
                 <a href="#">  <span class="cancel">x</span></a>
+
+                
                 
 
 
-                <div class="mainfoto">
-                    <img src="item.jpeg" />
+                <div id="mainfoto" >
+                    <img id="big" src="item.jpeg" alt="mainfoto"/>
 
                 </div>
 
@@ -637,16 +657,13 @@
 
             <div class="bottom">
                 <div class="fotos">
-                    <a href="#"><img src="item.jpeg" /></a>
+                    <a onclick="document.getElementById('big').src='item.jpeg'" href="#"> <img id="phone" src="item.jpeg" /></a>
 
-                    <a href="#"> <img src="item1.jpeg" /></a>
+                    <a onclick="document.getElementById('big').src='item1.jpeg'"href="#"> <img id="phone2" src="item1.jpeg" /> </a>
 
-                    <a href="#"><img src="item2.jpeg" /></a>
+                    <a onclick="document.getElementById('big').src='item2.jpeg'" href="#"> <img id="phone3" src="item2.jpeg" /></a>
 
-                    <a href="#"> <img src="item3.jpeg" /></a>
-
-
-
+                    <a onclick="document.getElementById('big').src='item3.jpeg'" href="#"> <img id="phone4" src="item3.jpeg" /></a>
 
                 </div>
 
@@ -659,7 +676,11 @@
 
 
 
-
+    <script>
+        document.getElementById("b1").addEventListener("click", function() {
+          document.getElementById("check").innerHTML = "✓";
+        });
+        </script>
 
 </body>
 
